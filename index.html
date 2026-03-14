@@ -67,23 +67,25 @@ h2{ font-size:22px; margin-bottom:20px; }
 
 /* 前缀 */
 .prefix{
-  min-width:80px;
+  min-width:70px;   /* 保证左侧间距 */
   text-align:center;
   font-weight:bold;
 }
 
 /* 代码内容 */
 .code{
-  flex:1;
+  flex:1 1 auto;
+  max-width:200px; /* 中间输入框缩短 */
   margin:0 10px;
   text-align:center;
   font-weight:bold;
-  letter-spacing:2px; /* 字母数字之间轻微间距 */
+  letter-spacing:2px; 
   padding:4px;
   border:none;
   border-radius:6px;
   background: rgba(255,255,255,0.15);
   color:#fff;
+  box-sizing:border-box;
 }
 
 /* 复制按钮 */
@@ -131,7 +133,7 @@ h2{ font-size:22px; margin-bottom:20px; }
 
 @media screen and (max-width:480px){
   .prefix{ min-width:60px; font-size:13px; }
-  .code{ margin:0 6px; font-size:14px; }
+  .code{ max-width:140px; margin:0 6px; font-size:14px; }
   .copy-btn{ padding:3px 6px; font-size:12px; }
   .usage{ font-size:16px; }
 }
