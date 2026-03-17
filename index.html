@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dream77.com में आपका स्वागत है</title>
 
+<!-- ===== Favicon ===== -->
+<link rel="icon" type="image/png" sizes="512x512" href="https://raw.githubusercontent.com/Dream77com/BOUNS/93d663604cd529fd84f37faae160a546e16a5c94/D77-512.png">
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4VZ92C5WBH"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -301,7 +304,6 @@ https://cutt.ly/Dream77_01
 </p>
 </div>
 
-<!-- 复制提示 -->
 <div id="successAlert" class="copy-alert success">कॉपी सफल हुई</div>
 <div id="failAlert" class="copy-alert fail">कॉपी विफल हुई</div>
 
@@ -360,7 +362,6 @@ function copyRegisteredCode() {
             setTimeout(function(){document.getElementById("failAlert").style.display="none";},2000);
         });
     } else {
-        // 旧浏览器降级
         var textarea = document.createElement("textarea");
         textarea.value = code;
         document.body.appendChild(textarea);
