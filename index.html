@@ -169,113 +169,28 @@ word-break:break-all;
 text-decoration:underline;
 }
 
-/* ===== 新增 VIP 板块 ===== */
-
-.vip-box{
-margin-top:30px;
-padding:18px;
-background:rgba(0,0,0,0.5);
-border-radius:12px;
-}
-
-.vip-title{
-font-size:26px;
-font-weight:bold;
-margin-bottom:15px;
-display:block;
-}
-
-.vip-code-row{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:30px;
-margin-bottom:15px;
-flex-wrap:wrap;
-}
-
-.vip-code{
-font-size:26px;
-font-weight:bold;
-letter-spacing:2px;
-}
-
-.vip-amount{
-font-size:18px;
-}
-
-.vip-copy{
-margin-top:10px;
-padding:10px 22px;
-border:none;
-border-radius:20px;
-background:#00ffcc;
-color:#000;
-font-weight:bold;
-cursor:pointer;
-}
-
-/* 提示 */
-.copy-msg{
-margin-top:10px;
-font-size:16px;
-display:none;
-}
-
-.notice{
-margin-top:20px;
-text-align:left;
-line-height:1.8;
-}
-
-.notice-title{
-color:red;
-font-weight:bold;
-}
-
-.share-text{
-margin-top:20px;
-font-size:20px;
-white-space:nowrap;
-}
-
-.action-row{
-margin-top:20px;
-display:flex;
-justify-content:space-between;
-gap:10px;
-}
-
-.action-btn{
-flex:1;
-padding:10px;
-border-radius:10px;
-border:none;
-font-weight:bold;
-cursor:pointer;
-white-space:nowrap;
-}
-
-.download{
-background:#ffcc00;
-color:#000;
-}
-
-.share{
-background:#00ccff;
-color:#000;
-}
-
 @media screen and (max-width:480px){
-.prefix{min-width:60px;font-size:13px;}
-.code{max-width:140px;margin:0 6px;font-size:14px;}
-.copy-btn{padding:3px 6px;font-size:12px;}
-.usage{font-size:16px;}
-.vip-code-row{gap:10px;}
-.vip-code{font-size:22px;}
-.vip-amount{font-size:16px;}
-.vip-title{font-size:22px;}
-.share-text{font-size:18px;}
+
+.prefix{
+min-width:60px;
+font-size:13px;
+}
+
+.code{
+max-width:140px;
+margin:0 6px;
+font-size:14px;
+}
+
+.copy-btn{
+padding:3px 6px;
+font-size:12px;
+}
+
+.usage{
+font-size:16px;
+}
+
 }
 
 </style>
@@ -372,120 +287,36 @@ https://cutt.ly/Dream77_01
 कॉपी विफल हुई
 </div>
 
-<!-- ===== VIP 注册用户板块 ===== -->
-<div class="vip-box">
-
-<span class="vip-title">Dream77 रजिस्टर्ड यूज़र्स कोड</span>
-
-<div class="vip-code-row">
-<div class="vip-code">9CAD4DA9</div>
-<div class="vip-amount">₹7-₹17</div>
-</div>
-
-<button class="vip-copy" onclick="copyVIP()">COPY</button>
-
-<div id="copySuccess" class="copy-msg success">कॉपी सफल हुआ</div>
-<div id="copyFail" class="copy-msg fail">कॉपी विफल हुआ</div>
-
-<div class="notice">
-<div class="notice-title">सूचना:</div>
-<div style="margin-top:10px;">
-रिचार्ज किए गए उपयोगकर्ता इसे प्राप्त नहीं कर सकते!
-</div>
-</div>
-
-<div class="share-text">
-दोस्तों के साथ शेयर करें!
-</div>
-
-<div class="action-row">
-<button class="action-btn download" onclick="downloadAPK()">डाउनलोड</button>
-<button class="action-btn share" onclick="sharePage()">शेयर</button>
-</div>
-
-</div>
-
-</div>
-
 <script>
-// ===== 普通兑换码复制 =====
+
 function copyCode(btn){
+
 var codeInput = btn.previousElementSibling;
 var code = codeInput.value;
 
 navigator.clipboard.writeText(code).then(function(){
+
 document.getElementById("successAlert").style.display="block";
-document.getElementById("failAlert").style.display="none";
-gtag('event','copy_code',{event_category:'bonus',event_label:code});
-setTimeout(function(){document.getElementById("successAlert").style.display="none";},2000);
-}).catch(function(){
-document.getElementById("failAlert").style.display="block";
-setTimeout(function(){document.getElementById("failAlert").style.display="none";},2000);
+
+gtag('event','copy_code',{
+event_category:'bonus',
+event_label:code
 });
-}
 
-// ===== VIP兑换码复制 =====
-function copyVIP(){
-var text = "9CAD4DA9";
+setTimeout(function(){
+document.getElementById("successAlert").style.display="none";
+},2000);
 
-try{
-var textarea = document.createElement("textarea");
-textarea.value = text;
-document.body.appendChild(textarea);
-textarea.focus();
-textarea.select();
-var successful = document.execCommand('copy');
-document.body.removeChild(textarea);
-if(successful){showSuccess();}else{manualCopy(text);}
-}catch(err){manualCopy(text);}
+}).catch(function(){
 
-function manualCopy(text){
-var input = document.createElement("input");
-input.value = text;
-document.body.appendChild(input);
-input.select();
-showFailManual();
-}
+document.getElementById("failAlert").style.display="block";
 
-function showSuccess(){
-document.getElementById("copySuccess").style.display="block";
-document.getElementById("copyFail").style.display="none";
-setTimeout(function(){document.getElementById("copySuccess").style.display="none";},1500);
-}
+setTimeout(function(){
+document.getElementById("failAlert").style.display="none";
+},2000);
 
-function showFailManual(){
-document.getElementById("copyFail").innerText = "कृपया लंबा दबाकर कॉपी करें";
-document.getElementById("copyFail").style.display="block";
-setTimeout(function(){document.getElementById("copyFail").style.display="none";},2000);
-}
+});
 
-// ===== 下载按钮 =====
-function downloadAPK(){
-window.location.href = "https://data.dream77.info/apk/dream77.apk";
-}
-
-// ===== 分享按钮 =====
-function sharePage(){
-const shareData = {
-title: 'Dream77 Bonus',
-text: '🔥 आज का फ्री बोनस कोड! अभी लो 👉',
-url: window.location.href
-};
-
-if (navigator.share){
-navigator.share(shareData).catch((err)=>{fallbackShare();});
-}else{fallbackShare();}
-}
-
-function fallbackShare(){
-var text = "🔥 Dream77 Bonus 👉 " + window.location.href;
-var textarea = document.createElement("textarea");
-textarea.value = text;
-document.body.appendChild(textarea);
-textarea.select();
-document.execCommand("copy");
-document.body.removeChild(textarea);
-alert("लिंक कॉपी हो गया, अब शेयर करें!");
 }
 
 </script>
