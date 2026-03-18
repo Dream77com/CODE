@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dream77.com में आपका स्वागत है</title>
 
-<!-- ===== Favicon ===== -->
 <link rel="icon" type="image/png" sizes="512x512" href="https://raw.githubusercontent.com/Dream77com/BOUNS/93d663604cd529fd84f37faae160a546e16a5c94/D77-512.png">
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4VZ92C5WBH"></script>
@@ -83,7 +82,7 @@ h2{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    background: rgba(255,255,255,0.05);
+    background: rgba(255,255,255,0.1);
     padding:6px 10px;
     border-radius:8px;
 }
@@ -134,7 +133,7 @@ h2{
 .success{color:#00ffcc;}
 .fail{color:red;}
 .usage{
-    background: rgba(50,50,80,0.9);
+    background: rgba(0,0,0,0.7); /* 修改：深色半透明背景 */
     padding:15px;
     margin-top:25px;
     border-radius:10px;
@@ -157,6 +156,23 @@ h2{
     padding:18px;
     background:rgba(0,0,0,0.5);
     border-radius:12px;
+}
+.vip-code-line{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:15px 0;
+    padding:6px 10px;
+    background:rgba(255,255,255,0.05);
+    border-radius:8px;
+    white-space:nowrap;
+}
+.vip-left{
+    font-size:20px;
+    font-weight:bold;
+}
+.vip-right{
+    font-size:16px;
 }
 .vip-title{
     font-size:26px;
@@ -203,22 +219,14 @@ h2{
     cursor:pointer;
     white-space:nowrap;
 }
-.download{
-    background:#ffcc00;
-    color:#000;
-}
-.share{
-    background:#00ccff;
-    color:#000;
-}
+.download{background:#ffcc00;color:#000;}
+.share{background:#00ccff;color:#000;}
 @media screen and (max-width:480px){
     .prefix{min-width:60px;font-size:13px;}
     .code{max-width:140px;margin:0 6px;font-size:14px;}
-    .copy-btn{padding:3px 6px;font-size:12px;}
+    .vip-left{font-size:18px;}
+    .vip-right{font-size:14px;}
     .usage{font-size:16px;}
-    .vip-copy{padding:8px 18px;}
-    .vip-title{font-size:22px;}
-    .share-text{font-size:18px;}
 }
 </style>
 </head>
@@ -233,45 +241,44 @@ h2{
 
 <h2>
 <span class="bonus">Bonus</span>
-<span class="date">Code for 18/03/2026</span>
+<span class="date">Code for 19/03/2026</span>
 </h2>
 
 <div class="input-box">
 
-<!-- 普通兑换码 -->
 <div class="code-row">
 <div class="prefix">₹200+</div>
-<input type="text" class="code" value="E4765949" readonly>
+<input type="text" class="code" value="E96E1FBD" readonly>
 <button class="copy-btn" onclick="copyCode(this)">COPY</button>
 </div>
 
 <div class="code-row">
 <div class="prefix">₹500+</div>
-<input type="text" class="code" value="0D10C6F5" readonly>
+<input type="text" class="code" value="9623540E" readonly>
 <button class="copy-btn" onclick="copyCode(this)">COPY</button>
 </div>
 
 <div class="code-row">
 <div class="prefix">₹1,000+</div>
-<input type="text" class="code" value="071A10FC" readonly>
+<input type="text" class="code" value="28A57230" readonly>
 <button class="copy-btn" onclick="copyCode(this)">COPY</button>
 </div>
 
 <div class="code-row">
 <div class="prefix">₹5,000+</div>
-<input type="text" class="code" value="D31F7BC9" readonly>
+<input type="text" class="code" value="A6E2830F" readonly>
 <button class="copy-btn" onclick="copyCode(this)">COPY</button>
 </div>
 
 <div class="code-row">
 <div class="prefix">₹10,000+</div>
-<input type="text" class="code" value="2B716973" readonly>
+<input type="text" class="code" value="4984C25D" readonly>
 <button class="copy-btn" onclick="copyCode(this)">COPY</button>
 </div>
 
 <div class="code-row">
 <div class="prefix">₹50,000+</div>
-<input type="text" class="code" value="335FC2F4" readonly>
+<input type="text" class="code" value="4DCD5E24" readonly>
 <button class="copy-btn" onclick="copyCode(this)">COPY</button>
 </div>
 
@@ -279,24 +286,19 @@ h2{
 
 <div class="usage">
 <strong>Dream77 रीडीम कोड का उपयोग करने की प्रक्रिया:</strong>
-
 <p>क्रमांक 1:
-<a href="https://dream77.com/" target="_blank">Dream77.com</a>
-पर क्लिक करें, APP डाउनलोड करें और खोलें।
+<a href="https://dream77.com/" target="_blank">Dream77.com</a> पर क्लिक करें, APP डाउनलोड करें और खोलें।
 </p>
-
 <p>क्रमांक 2:
 <a href="https://cutt.ly/Dream77_02" target="_blank">
 https://cutt.ly/Dream77_02
 </a>
 </p>
-
 <p>क्रमांक 3:
 <a href="https://cutt.ly/Dream77_03" target="_blank">
 https://cutt.ly/Dream77_03
 </a>
 </p>
-
 <p>क्रमांक 4:
 <a href="https://cutt.ly/Dream77_01" target="_blank">
 https://cutt.ly/Dream77_01
@@ -307,9 +309,13 @@ https://cutt.ly/Dream77_01
 <div id="successAlert" class="copy-alert success">कॉपी सफल हुई</div>
 <div id="failAlert" class="copy-alert fail">कॉपी विफल हुई</div>
 
-<!-- 注册用户专属兑换码 -->
 <div class="vip-box">
 <span class="vip-title">रजिस्टर्ड यूज़र्स कोड</span>
+
+<div class="vip-code-line">
+<div class="vip-left">9CAD4DA9</div>
+<div class="vip-right">= ₹7~ ₹17</div>
+</div>
 
 <button class="vip-copy" onclick="copyRegisteredCode()">COPY</button>
 
@@ -320,9 +326,7 @@ https://cutt.ly/Dream77_01
 </div>
 </div>
 
-<div class="share-text">
-दोस्तों के साथ शेयर करें!
-</div>
+<div class="share-text">दोस्तों के साथ शेयर करें!</div>
 
 <div class="action-row">
 <button class="action-btn download" onclick="downloadAPK()">डाउनलोड</button>
